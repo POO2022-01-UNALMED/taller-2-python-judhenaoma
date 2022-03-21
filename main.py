@@ -21,10 +21,11 @@ class Auto:
 
             return "Las piezas no son originales"
         
-        for i in range(len(self.asientos)):
-            if self.asientos.registro != self.registro:
-                return "Las piezas no son originales"
-        
+        for asiento in self.asientos:
+            if asiento is not None:
+                if asiento.registro != self.registro or asiento.registro != self.motor.registro:
+                    return "Las piezas no son originales"
+
         return "Auto origina"
 
 
